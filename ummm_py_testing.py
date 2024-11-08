@@ -219,10 +219,40 @@ print(calendar.month(yy,mm))
 #print('c:', result_a,'d:',result_b)
 
 #yield
-def diu():
-    yield 'vcl'
-    print('kaka')
-    yield 'kii'
-    print('fak')
-for value in diu():
-    print(value) #what the fuck is this
+#def diu():
+#    yield 'vcl'
+#    print('kaka')
+#    yield 'kii'
+#    print('fak')
+#for value in diu():
+#    print(value) #what the fuck is this
+
+#LEETCODE
+# nums = [3,1,2,10,1]
+# runningSum = []
+# summ = 0
+# try:
+#     for i in range(len(nums)):
+#         print('i: ', i)
+#         summ = sum(nums[:i+1])
+#         runningSum.append(summ)
+# except KeyboardInterrupt:
+#     print('oh fuck!')
+# print(runningSum)
+
+
+#2D array
+#np.array is more flexible and can handle higher-dimensional arrays.
+#for most matrix operations, using np.array is often preferred.
+import numpy as np
+matrix = [[1,2,3],
+       [4,5,6],
+       [7,8,9]]
+arr = np.array([[3,2,1],
+               [6,5,4],
+               [9,8,7]])
+# print(matrix)
+# for row in matrix:
+#     for element in row:
+#         print(element, end='')
+print(arr + 2)
