@@ -121,6 +121,7 @@
 #    print('done!!')
 
 import calendar
+
 yy = 2024
 mm = 11
 
@@ -227,32 +228,134 @@ print(calendar.month(yy,mm))
 #for value in diu():
 #    print(value) #what the fuck is this
 
+
+
+
+
+
+
 #LEETCODE
-# nums = [3,1,2,10,1]
-# runningSum = []
-# summ = 0
-# try:
+
+
+
+
+
+
+# def find_running_sum(nums: list) -> list:
+#     running_sum = []
+#     summ = 0
 #     for i in range(len(nums)):
-#         print('i: ', i)
 #         summ = sum(nums[:i+1])
-#         runningSum.append(summ)
-# except KeyboardInterrupt:
-#     print('oh fuck!')
-# print(runningSum)
+#         running_sum.append(summ)
+#
+#     return running_sum
+# print('Running sum:', find_running_sum([3,1,2,10,1]))
 
 
 #2D array
 #np.array is more flexible and can handle higher-dimensional arrays.
 #for most matrix operations, using np.array is often preferred.
-import numpy as np
-matrix = [[1,2,3],
-       [4,5,6],
-       [7,8,9]]
-arr = np.array([[3,2,1],
-               [6,5,4],
-               [9,8,7]])
-# print(matrix)
-# for row in matrix:
-#     for element in row:
-#         print(element, end='')
-print(arr + 2)
+# def numpy_test(matrix = list):
+# import numpy as np
+# matrix = [[1,2,3],
+#        [4,5,6],
+#        [7,8,9]]
+# arr = np.array([[3,2,1],
+#                [6,5,4],
+#                [9,8,7]])
+# # print(matrix)
+# # for row in matrix:
+# #     for element in row:
+# #         print(element, end='')
+# print(arr + 2)
+
+
+
+#who is the richest
+#def find_the_richest(accounts: list) -> int:
+#     max_wealth = []
+#     for account in range(len(accounts)-1):
+#         if accounts[account + 1] < accounts[account]:
+#             max_wealth = accounts[account]
+#
+#     return sum(max_wealth)
+#
+# print('The richest:', find_the_richest([[7,1,3],
+#                                        [2,8,7],
+#                                        [1,9,5]]))
+
+
+
+
+#FIZZ BUZZ
+# answer = []
+# def fizz_buzz(num: int) -> list:
+#     for i in range(num):
+#         if (i + 1) % 3 == 0 and (i + 1) % 5 == 0:
+#             answer.append('FizzBuzz')
+#         elif (i + 1) % 3 == 0:
+#             answer.append('Fizz')
+#         elif (i + 1) % 5 == 0:
+#             answer.append('Buzz')
+#         else:
+#             answer.append(i+1)
+#     return answer
+#
+# number = input('Enter a number: ')
+# number = int(number)
+# print('Result:', fizz_buzz(number))
+
+
+
+# def step_count_to_zero(num: int) -> int:
+#     step_count = 0
+#     while num != 0:
+#         if num % 2 == 0:
+#             num = num / 2
+#             step_count += 1
+#         else:
+#             num = num - 1
+#             step_count += 1
+#     return step_count
+# number = input('Enter the number: ')
+# number = int(number)
+# print('Step count:', step_count_to_zero(number))
+
+
+
+# def find_middle_node(lst: list) -> list:
+#     final_lst = []
+#     count = 0
+#
+#     middle_index = int(len(lst) / 2)
+#     condition = middle_index
+#     while count < (len(lst) - condition):
+#         final_lst.append(lst[middle_index])
+#         middle_index += 1
+#         count += 1
+#
+#     return final_lst
+#
+# print('Middle node: ', find_middle_node([1,2,3,4,5,6,7,8]))
+
+
+
+def can_construct(ransom_note: str, magazine: str) -> bool:
+    counter = {}
+    for c in magazine:
+        if c in counter:
+            counter[c] += 1
+        else:
+            counter[c] = 1
+
+    for c in ransom_note:
+        if c not in counter:
+            return False
+        elif counter[c] == 1:
+            del counter[c]
+        else:
+            counter[c] -= 1
+
+    return True
+
+#print(can_construct('happy','happy halloween'))
