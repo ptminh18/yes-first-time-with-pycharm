@@ -340,22 +340,67 @@ print(calendar.month(yy,mm))
 
 
 
-def can_construct(ransom_note: str, magazine: str) -> bool:
-    counter = {}
-    for c in magazine:
-        if c in counter:
-            counter[c] += 1
-        else:
-            counter[c] = 1
-
-    for c in ransom_note:
-        if c not in counter:
-            return False
-        elif counter[c] == 1:
-            del counter[c]
-        else:
-            counter[c] -= 1
-
-    return True
+# def can_construct(ransom_note: str, magazine: str) -> bool:
+#     counter = {}
+#     for c in magazine:
+#         if c in counter:
+#             counter[c] += 1
+#         else:
+#             counter[c] = 1
+#
+#     for c in ransom_note:
+#         if c not in counter:
+#             return False
+#         elif counter[c] == 1:
+#             del counter[c]
+#         else:
+#             counter[c] -= 1
+#
+#     return True
 
 #print(can_construct('happy','happy halloween'))
+
+
+
+
+#PALINDROME
+# def is_palindrome(x: int) -> bool:
+#     reverse_num = x
+#     if x < 0:
+#         return False
+#     else:
+#         x = str(x)
+#         x = x[::-1]
+#         if str(x) == str(reverse_num):
+#             return True
+#         return False
+# if is_palindrome(121) == True:
+#     print('true')
+# else:
+#     print('false')
+
+
+
+#count the last word of the string
+# def count_last_word (s: str) -> int:
+#     s = s.split(' ')# split a string to a list
+#     for i in range(len(s)-1, -1, -1):
+#         if s[i]:
+#             return len(s[i])
+#     return 0
+#
+# s = input('input a string: ')
+# print('The last word has', count_last_word(s), 'letter')
+
+
+# sqrt
+# import math
+#
+# def find_sqrt(x: int) -> int:
+#     return math.floor(math.sqrt(x))
+#
+# x = int(input('input: '))
+# print('After round down:', find_sqrt(x))
+
+
+
